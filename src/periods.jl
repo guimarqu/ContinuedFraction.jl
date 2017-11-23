@@ -1,11 +1,11 @@
-function findperiod(cf::ContinuedFraction)
+function findperiod(cf::PartialQuotients)
   return 0
 end
 
 """
 sqrt(n) = [a0; a1 a2 ... a2 a1 2*a0 a1 a2...] with period "a1 a2 ... a2 a1 2*a0".
 """
-function findperiod(cf::ContinuedFraction{QuadraticIrrational})
+function findperiod(cf::PartialQuotients{QuadraticIrrational})
   frac = cf.partialquotients
   len = length(frac)
   (len < 2) && return 0
